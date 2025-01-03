@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status CNPJ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center; /* Adiciona a propriedade para centralizar o texto */
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Consultar Status do CNPJ</h1>
+        <form id="cnpjForm">
+            <label for="cnpjs">Insira abaixo o CNPJ que deseja consultar:</label>
+            <input type="text" id="cnpjs" placeholder="Formato: 00.000.000/0000-00, 00.000.000/0000-00" required>
+            <button type="submit">Consultar</button>
+        </form>
+        <p id="result"></p>
+    </div>
+    <script>
+        src="integracao_back.js"
+    </script>
+</body>
+</html>
