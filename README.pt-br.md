@@ -1,4 +1,6 @@
-## 📊 Portal de Consulta de Status de CNPJ
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/emy-devfullstack/Portal-de-consultas-CNPJ/blob/main/README.md) [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/emy-devfullstack/Portal-de-consultas-CNPJ/blob/main/README.pt-br.md)  
+
+# 📊 Portal de Consulta de Status de CNPJ
 
 Bem-vindo ao **Portal de Consulta de Status de CNPJ**! Este projeto permite que você consulte rapidamente o status de um CNPJ, oferecendo uma interface amigável e eficiente para obter informações úteis sobre empresas no Brasil.
 
