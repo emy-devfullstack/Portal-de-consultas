@@ -1,6 +1,4 @@
-## 📊 Portal-de-consultas-CNPJ
-Site para realizar consultas automáticas de pessoas jurídicas.
-# Portal de Consulta de Status de CNPJ
+## 📊 Portal de Consulta de Status de CNPJ
 
 Bem-vindo ao **Portal de Consulta de Status de CNPJ**! Este projeto permite que você consulte rapidamente o status de um CNPJ, oferecendo uma interface amigável e eficiente para obter informações úteis sobre empresas no Brasil.
 
