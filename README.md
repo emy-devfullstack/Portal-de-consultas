@@ -26,5 +26,5 @@ Welcome to the **CNPJ Status Consultation Portal**! This project allows you to q
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-user/cnpj-status-portal.git
+   https://github.com/emy-devfullstack/Portal-de-consultas-CNPJ.git
    cd cnpj-status-portal
