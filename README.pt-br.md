@@ -26,5 +26,5 @@ Bem-vindo ao **Portal de Consulta de Status de CNPJ**! Este projeto permite que 
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/portal-consulta-cnpj.git
+   git clone https://github.com/emy-devfullstack/Portal-de-consultas-CNPJ.git
    cd portal-consulta-cnpj
