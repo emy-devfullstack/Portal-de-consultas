@@ -1,58 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="index.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Status CNPJ</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        input, button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: center;
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        #result {
-            margin-top: 20px;
-            font-size: 1.1em;
-        }
-    </style>
-</head>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portal de Consulta CNPJ</title>
+        <!-- Fontes do Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    
 <body>
-    <div class="container">
-        <h1>Consultar Status do CNPJ</h1>
-        <form id="cnpjForm">
-            <label for="cnpjs">Insira abaixo o CNPJ que deseja consultar:</label>
-            <input type="text" id="cnpjs" placeholder="Formato: 00.000.000/0000-00, 00.000.000/0000-00" required>
-            <button type="submit">Consultar</button>
-        </form>
-        <p id="result"></p>
+    <div class="logo-container">
+        <img src="logo_brw.png" alt="Logo do Portal" class="logo"> 
     </div>
+
+    <div class="container">
+        <header>
+            <h1>Portal de consultas</h1>
+        </header>
+
+        <div class="search-form">
+            <h2>Digite o CNPJ</h2>
+            <input type="text" id="cnpj" placeholder="Digite o CNPJ aqui" />
+            <button onclick="consultarCnpj()">Consultar</button>
+        </div>
+
+        <div id="result" style="display: none;">
+            <h3>Resultado da consulta</h3>
+            <p id="status-cnpj"></p>
+            <a id="download-link" href="" target="_blank">Baixar arquivo</a>
+        </div>
+
+        <div>
+            <p>Portal de Consulta CNPJ - 2025 - Desenvolvido por Emily Garcia</p>
+        </div>
+    </div>
+
     <script>
-        src="integracao_back.js"
+        function consultarCnpj() {
+            const cnpj = document.getElementById('cnpj').value;
+        }
     </script>
 </body>
 </html>
