@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
- 
+
 body {
     font-family: 'Roboto', sans-serif;
     height: 100vh;
@@ -12,8 +12,8 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
-    background-color: #e9f5e9; 
-    padding-bottom: 60px; 
+    background-color: #e9f5e9;
+    padding-bottom: 60px;
 }
 
 body::before {
@@ -40,28 +40,27 @@ body::before {
 }
 
 .container {
-    width: 80%;
-    max-width: 900px;
+    width: 900px;
+    max-width: 90%; /* Ajuste para responsividade */
     padding: 80px;
-    background-color: rgba(255, 255, 255, 0.85); 
+    background-color: rgba(255, 255, 255, 0.25);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     z-index: 1;
-    margin-bottom: 40px;
-    position: fixed;
-    color: #000; 
-    font-family: 'Poppins', sans-serif; 
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    position: relative; /* Ajuste para a posição do container */
 }
 
 .logo {
-    width: 350px; 
-    margin: 0 auto; 
-    position: fixed; 
-    top: 170px;
+    width: 350px;
+    position: fixed;
+    top: 10%; /* Proporção para melhor responsividade */
     left: 50%;
-    transform: translateX(-50%); 
-  }
+    transform: translateX(-50%);
+    z-index: 10; /* Garante que a logo fique acima de outros elementos */
+}
 
 header {
     margin-bottom: 40px;
@@ -69,14 +68,14 @@ header {
 
 header h1 {
     font-size: 2.5em;
-    color: #000; 
+    color: #000;
     font-weight: 600;
 }
 
 header p {
     font-size: 1.1em;
-    color: #000; 
-    font-weight: 400; 
+    color: #000;
+    font-weight: 400;
 }
 
 .search-form {
@@ -85,7 +84,7 @@ header p {
 
 .search-form h2 {
     font-size: 1.5em;
-    color: #000; 
+    color: #000;
     margin-bottom: 10px;
 }
 
@@ -93,12 +92,12 @@ header p {
     width: 80%;
     padding: 12px;
     font-size: 1.2em;
-    border: 2px solid #888; 
+    border: 2px solid #F37021;
     border-radius: 8px;
     margin-bottom: 10px;
     outline: none;
     transition: border-color 0.3s ease;
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif;
 }
 
 .search-form input:focus {
@@ -109,7 +108,7 @@ header p {
     padding: 12px 24px;
     font-size: 1.2em;
     color: #fff;
-    background-color: #444; 
+    background-color: #F37021;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -118,9 +117,8 @@ header p {
 }
 
 .search-form button:hover {
-    background-color: #333; 
+    background-color: #333;
 }
-
 
 #result {
     margin-top: 30px;
@@ -129,7 +127,7 @@ header p {
 #result h3 {
     font-size: 1.5em;
     color: #000;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
 }
 
 #status-cnpj {
@@ -143,7 +141,7 @@ header p {
     font-size: 1.1em;
     color: #000;
     text-decoration: none;
-    border: 1px solid #000; 
+    border: 1px solid #000;
     padding: 8px 16px;
     border-radius: 8px;
     transition: background-color 0.3s ease;
