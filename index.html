@@ -7,36 +7,290 @@
         <!-- Fontes do Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="index.css">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Roboto', sans-serif;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                background-color: #e9f5e9;
+                padding-bottom: 60px;
+            }
+
+            body::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, #4e73df, #2d4ca8, #253f63);
+                background-size: 300% 300%;
+                filter: blur(15px);
+                z-index: -1;
+                animation: gradientMove 10s ease infinite;
+            }
+
+            @keyframes gradientMove {
+                0% {
+                    background-position: 0% 50%;
+                }
+                100% {
+                    background-position: 100% 50%;
+                }
+            }
+
+            .logo {
+                width: 350px;
+                position: relative;
+                top: 20%; 
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10;
+            }
+
+            .container {
+                width: 900px;
+                max-width: 90%;
+                padding: 80px;
+                top: 30%;
+                background-color: rgba(255, 255, 255, 0.25);
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                z-index: 1;
+                color: #000;
+                font-family: 'Poppins', sans-serif;
+                position: relative; 
+            }
+
+            header {
+                margin-bottom: 40px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+                color: #000;
+                font-weight: 600;
+            }
+
+            header p {
+                font-size: 1.1em;
+                color: #000;
+                font-weight: 400;
+            }
+
+            .search-form {
+                margin-bottom: 30px;
+            }
+
+            .search-form h2 {
+                font-size: 1.5em;
+                color: #000;
+                margin-bottom: 10px;
+            }
+
+            .search-form input {
+                width: 80%;
+                padding: 12px;
+                font-size: 1.2em;
+                border: 2px solid #F37021;
+                border-radius: 8px;
+                margin-bottom: 10px;
+                outline: none;
+                transition: border-color 0.3s ease;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            .search-form input:focus {
+                border-color: #555;
+            }
+
+            .search-form button {
+                padding: 12px 24px;
+                font-size: 1.2em;
+                color: #fff;
+                background-color: #F37021;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            .search-form button:hover {
+                background-color: #333;
+            }
+
+            #result {
+                margin-top: 30px;
+            }
+
+            #result h3 {
+                font-size: 1.5em;
+                color: #000;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            #status-cnpj {
+                font-size: 1.1em;
+                color: #000;
+            }
+
+            #download-link {
+                display: inline-block;
+                margin-top: 10px;
+                font-size: 1.1em;
+                color: #000;
+                text-decoration: none;
+                border: 1px solid #000;
+                padding: 8px 16px;
+                border-radius: 8px;
+                transition: background-color 0.3s ease;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            #download-link:hover {
+                background-color: #000;
+                color: #fff;
+            }
+
+            footer {
+                margin-top: 40px;
+                font-size: 0.9em;
+                color: #000;
+                font-family: 'Roboto', sans-serif;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            footer p {
+                margin-top: 10px;
+            }
+
+            /* Sidebar styles */
+            .sidebar {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: #555;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+                z-index: 1000;
+            }
+
+            .sidebar a {
+                padding: 10px 15px;
+                text-decoration: none;
+                font-size: 18px;
+                color: white;
+                display: block;
+            }
+
+            .sidebar a:hover {
+                background-color: #333;
+            }
+
+            .open-btn {
+                font-size: 24px;
+                cursor: pointer;
+                background-color: transparent;
+                color: white;
+                padding: 15px 20px;
+                border: none;
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                z-index: 1001;
+                border-radius: 5px;
+            }
+
+            .close-btn {
+                position: absolute;
+                top: 20px;
+                right: 25px;
+                font-size: 20px;
+                color: white;
+                cursor: pointer;
+            }
+
+            .content {
+                margin-left: 0;
+                transition: margin-left 0.5s;
+                padding: 20px;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+        </style>
     </head>
     
 <body>
-    <div class="logo-container">
-        <img src="logo_brw.png" alt="Logo do Portal" class="logo"> 
+    <button class="open-btn" onclick="openSidebar()">☰ Menu</button>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">×</a>
+        <a href="#home">Início</a>
+        <a href="#consulta">Consulta</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
     </div>
 
-    <div class="container">
-        <header>
-            <h1>Portal de consultas</h1>
-        </header>
-
-        <div class="search-form">
-            <h2>Digite o CNPJ</h2>
-            <input type="text" id="cnpj" placeholder="00.000.000/0000-00" />
-            <button onclick="consultarCnpj()">Consultar</button>
+    <div class="content">
+        <div class="logo-container">
+            <img src="fotos/logo_brw.png" alt="Logo do Portal" class="logo"> 
         </div>
 
-        <div id="result" style="display: none;">
-            <h3>Resultado da consulta</h3>
-            <p id="status-cnpj"></p>
-            <a id="download-link" href="" target="_blank">Baixar arquivo</a>
-        </div>
+        <div class="container">
+            <header>
+                <h1>Portal de consultas</h1>
+            </header>
 
-        <div>
-            <p>© 2025 BRW - Crie, Sonhe e Seja | Desenvolvido por Emily Garcia</p>
+            <div class="search-form">
+                <h2>Digite o CNPJ</h2>
+                <input type="text" id="cnpj" placeholder="00.000.000/0000-00" />
+                <button onclick="consultarCnpj()">Consultar</button>
+            </div>
+
+            <div id="result" style="display: none;">
+                <h3>Resultado da consulta</h3>
+                <p id="status-cnpj"></p>
+                <a id="download-link" href="" target="_blank">Baixar arquivo</a>
+            </div>
+
+            <div>
+                <p>© 2025 BRW - Crie, Sonhe e Seja | Desenvolvido por Emily Garcia</p>
+            </div>
         </div>
     </div>
 
     <script>
+        function openSidebar() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.querySelector(".content").style.marginLeft = "250px";
+            document.querySelector(".open-btn").classList.add("hidden");
+        }
+
+        function closeSidebar() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.querySelector(".content").style.marginLeft = "0";
+            document.querySelector(".open-btn").classList.remove("hidden");
+        }
+
         function consultarCnpj() {
             const cnpj = document.getElementById('cnpj').value;
         }
